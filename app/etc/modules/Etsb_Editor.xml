@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+	<modules>
+		<Etsb_Editor>
+		    <active>true</active>
+		    <codePool>local</codePool>
+		</Etsb_Editor>
+	</modules>
+</config>

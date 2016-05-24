@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<config>
+
+    <modules>
+        <Etsb_Photography>
+            <version>0.1.0</version>
+        </Etsb_Photography>
+    </modules>
+
+    <frontend>
+        <routers>
+            <photography>
+                <use>standard</use>
+                <args>
+                    <module>Etsb_Photography</module>
+                    <frontName>photography</frontName>
+                </args>
+            </photography>
+        </routers>
+
+        <layout>
+            <updates>
+                <photography>
+                    <file>photography.xml</file>
+                </photography>
+            </updates>
+        </layout>
+    </frontend>
+
+    <admin>
+        <routers>
+            <photography>
+                <use>admin</use>
+                <args>
+                    <module>Etsb_Photography</module>
+                    <frontName>photography</frontName>
+                </args>
+            </photography>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <!--<menu>
+            <photography module="photography">
+                <title>Photography</title>
+                <sort_order>71</sort_order>
+                <children>
+                    <items module="photography">
+                        <title>Manage Items</title>
+                        <sort_order>0</sort_order>
+                        <action>photography/adminhtml_photography</action>
+                    </items>
+                </children>
+            </photography>
+        </menu>-->
+
+        <menu>
+            <mycustom_menu translate="title" module="photography">
+                <title>Cataloging Tool</title>
+                <sort_order>300</sort_order>
+                <!--<children>
+                    &lt;!&ndash; child items go here &ndash;&gt;
+                    <subitem translate="title" module="photography">
+                        <title>Manage Items</title>
+                        <sort_order>10</sort_order>
+                        <action>photography/adminhtml_photography/</action>
+                    </subitem>
+                </children>-->
+
+                <children>
+                    <subitem1 translate="title" >
+                        <title>Pricing</title>
+                        <sort_order>2</sort_order>
+                        <action>photography/adminhtml_photography/</action>
+                    </subitem1>
+
+                    <subitem2 translate="title">
+                        <title>Photographer</title>
+                        <sort_order>3</sort_order>
+                        <action>editor/adminhtml_editor</action>
+                    </subitem2>
+
+                    <subitem3 translate="title">
+                        <title>Product Initiate</title>
+                        <sort_order>1</sort_order>
+                        <action>productinitiate/adminhtml_productinitiate</action>
+                    </subitem3>
+
+                    <subitem4 translate="title">
+                        <title>Photo Editor</title>
+                        <sort_order>4</sort_order>
+                        <action>photoeditor/adminhtml_photoeditor</action>
+                    </subitem4>
+
+                    <subitem5 translate="title">
+                        <title>Catalog Editor</title>
+                        <sort_order>5</sort_order>
+                        <action>cateditor/adminhtml_cateditor</action>
+                    </subitem5>
+                </children>
+            </mycustom_menu>
+        </menu>
+
+
+        <!--<acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <photography>
+                            <title>Photography Module</title>
+                            <sort_order>200</sort_order>
+                        </photography>
+                    </children>
+                </admin>
+            </resources>
+        </acl>-->
+
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <mycustom_menu translate="title" module="photography">
+                            <title>Cataloging Tool</title>
+                            <sort_order>300</sort_order>
+                            <children>
+                                <!-- child items go here -->
+                                <subitem1 translate="title" module="photography">
+                                    <title>Pricing</title>
+                                    <sort_order>10</sort_order>
+                                </subitem1>
+
+                                <subitem2 translate="title">
+                                    <title>Photographer</title>
+                                    <sort_order>20</sort_order>
+                                </subitem2>
+
+                                <subitem3 translate="title">
+                                    <title>Product Initiate</title>
+                                    <sort_order>20</sort_order>
+                                </subitem3>
+
+                                <subitem4 translate="title">
+                                    <title>Photo Editor</title>
+                                    <sort_order>20</sort_order>
+                                </subitem4>
+
+                                <subitem5 translate="title">
+                                    <title>Catalog Editor</title>
+                                    <sort_order>25</sort_order>
+                                </subitem5>
+
+                            </children>
+                        </mycustom_menu>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+
+        <layout>
+            <updates>
+                <photography>
+                    <file>photography.xml</file>
+                </photography>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <global>
+
+        <models>
+            <photography>
+                <class>Etsb_Photography_Model</class>
+                <resourceModel>photography_mysql4</resourceModel>
+            </photography>
+            <photography_mysql4>
+                <class>Etsb_Photography_Model_Mysql4</class>
+                <!--<entities>
+                    <photography>
+                        <table>photography</table>
+                    </photography>
+                </entities>-->
+                <entities>
+                    <!--<photography>
+                        <table>photography</table>
+                    </photography>-->
+                    <editor>
+                        <table>etsbeditor</table>
+                    </editor>
+                </entities>
+            </photography_mysql4>
+        </models>
+
+        <resources>
+            <photography_setup>
+                <setup>
+                    <module>Etsb_Photography</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </photography_setup>
+
+            <photography_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </photography_write>
+
+            <photography_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </photography_read>
+        </resources>
+
+        <blocks>
+            <photography>
+                <class>Etsb_Photography_Block</class>
+            </photography>
+        </blocks>
+
+        <helpers>
+            <photography>
+            <class>Etsb_Photography_Helper</class>
+            </photography>
+        </helpers>
+    </global>
+</config>

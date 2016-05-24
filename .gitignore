@@ -124,3 +124,7 @@ skin/frontend/default/modern/
 skin/frontend/enterprise
 skin/install/
 var/
+
+
+#added later
+.idea/
