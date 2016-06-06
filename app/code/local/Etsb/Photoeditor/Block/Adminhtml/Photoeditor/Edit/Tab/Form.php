@@ -152,10 +152,10 @@ class Etsb_Photoeditor_Block_Adminhtml_Photoeditor_Edit_Tab_Form extends Mage_Ad
         ));
 
 
-        $fieldset->addField('editor_filename', 'image', array(
+        /*$fieldset->addField('editor_filename', 'image', array(
             'label'     => Mage::helper('photoeditor')->__('Photographer Image'),
             'name'      => 'editor_filename',
-        ));
+        ));*/
 
         $fieldset->addField('photoeditor_filename', 'image', array(
             'label'     => Mage::helper('photoeditor')->__('Editor Image'),

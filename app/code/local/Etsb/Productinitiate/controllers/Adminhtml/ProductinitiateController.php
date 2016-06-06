@@ -65,8 +65,17 @@ class Etsb_Productinitiate_Adminhtml_ProductinitiateController extends Mage_Admi
     ->setShortDescription($postData['short_description'])
     //->setContent($postData['content'])
     ->setStatus($postData['status'])
-    ->setFlaginitiate(1)
-    ->save();
+    ->setFlaginitiate(1);
+
+
+    if ($productinitiateModel->getCreatedTime == NULL || $productinitiateModel->getUpdateTime() == NULL) {
+        $productinitiateModel->setCreatedTime(now())
+            ->setUpdateTime(now());
+    } else {
+        $productinitiateModel->setUpdateTime(now());
+    }
+
+    $productinitiateModel->save();
 
         //print_r($photographyModel);exit;
     Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('adminhtml')->__('Item was successfully saved'));

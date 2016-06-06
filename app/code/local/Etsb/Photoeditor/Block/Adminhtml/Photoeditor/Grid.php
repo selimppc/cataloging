@@ -41,6 +41,16 @@ class Etsb_Photoeditor_Block_Adminhtml_Photoeditor_Grid extends Mage_Adminhtml_B
             'index'     => 'sku',
         ));
 
+        $this->addColumn('image_download', array(
+            'header'           => Mage::helper('photoeditor')->__('Photographer Image Download'),
+            'align'            => 'center',
+            'filter'    => false,
+            'sortable'  => false,
+            'is_system' => true,
+            'renderer'         => 'Etsb_Cateditor_Block_Adminhtml_Cateditor_Red',
+            'index'            => 'editor_filename',
+        ));
+
         /*
         $this->addColumn('content', array(
               'header'    => Mage::helper('platform')->__('Item Content'),

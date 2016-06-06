@@ -155,8 +155,8 @@ class Etsb_Cateditor_Adminhtml_CateditorController extends Mage_Adminhtml_Contro
 
             try {
                 if ($model->getCreatedTime == NULL || $model->getUpdateTime() == NULL) {
-                    $model->setCreatedTime(now())
-                        ->setUpdateTime(now());
+                    $model->setCreatedTime(now());
+                        //->setUpdateTime(now());
                 } else {
                     $model->setUpdateTime(now());
                 }

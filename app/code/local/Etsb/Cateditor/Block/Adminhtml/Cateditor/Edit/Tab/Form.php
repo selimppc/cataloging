@@ -151,11 +151,11 @@ class Etsb_Cateditor_Block_Adminhtml_Cateditor_Edit_Tab_Form extends Mage_Adminh
             ),
         ));
 
-        /*$fieldset->addField('editor_filename', 'image', array(
+        $fieldset->addField('editor_filename', 'image', array(
             'label'     => Mage::helper('cateditor')->__('Photographer Image'),
             'required'  => false,
             'name'      => 'editor_filename',
-        ));*/
+        ));
 
         $fieldset->addField('photoeditor_filename', 'image', array(
             'label'     => Mage::helper('cateditor')->__('Editor Image'),

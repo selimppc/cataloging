@@ -59,8 +59,18 @@ class Etsb_Photography_Adminhtml_PhotographyController extends Mage_Adminhtml_Co
     ->setQty($postData['qty'])
     ->setTaxclass($postData['taxclass'])
     ->setIsstock($postData['isstock'])
-    ->setFlagprice(1)
-    ->save();
+    ->setFlagprice(1);
+
+    //if ($photographyModel->getCreatedTime == NULL || $photographyModel->getUpdateTime() == NULL) {
+    if ($photographyModel->getCreatedTime == NULL) {
+        $photographyModel->setCreatedTime(now());
+            //->setUpdateTime(now());
+    } else if($photographyModel->getUpdateTime() != NULL){
+        $photographyModel->setUpdateTime(now());
+    }
+
+    $photographyModel->save();
+
 
         //print_r($photographyModel);exit;
     Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('adminhtml')->__('Item was successfully saved'));

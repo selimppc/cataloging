@@ -155,8 +155,8 @@ class Etsb_Photoeditor_Adminhtml_PhotoeditorController extends Mage_Adminhtml_Co
 
             try {
                 if ($model->getCreatedTime == NULL || $model->getUpdateTime() == NULL) {
-                    $model->setCreatedTime(now())
-                        ->setUpdateTime(now());
+                    $model->setCreatedTime(now());
+                        //->setUpdateTime(now());
                 } else {
                     $model->setUpdateTime(now());
                 }

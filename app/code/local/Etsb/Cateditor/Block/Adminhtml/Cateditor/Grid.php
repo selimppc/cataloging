@@ -51,7 +51,7 @@ class Etsb_Cateditor_Block_Adminhtml_Cateditor_Grid extends Mage_Adminhtml_Block
         ));
 
 
-        $this->addColumn('image_download', array(
+        /*$this->addColumn('image_download', array(
             'header'           => Mage::helper('cateditor')->__('Photographer Image Download'),
             'align'            => 'center',
             'filter'    => false,
@@ -59,7 +59,7 @@ class Etsb_Cateditor_Block_Adminhtml_Cateditor_Grid extends Mage_Adminhtml_Block
             'is_system' => true,
             'renderer'         => 'Etsb_Cateditor_Block_Adminhtml_Cateditor_Red',
             'index'            => 'editor_filename',
-        ));
+        ));*/
 
 
 

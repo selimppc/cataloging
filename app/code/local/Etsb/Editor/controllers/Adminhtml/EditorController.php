@@ -151,8 +151,8 @@ class Etsb_Editor_Adminhtml_EditorController extends Mage_Adminhtml_Controller_A
 
             try {
                 if ($model->getCreatedTime == NULL || $model->getUpdateTime() == NULL) {
-                    $model->setCreatedTime(now())
-                        ->setUpdateTime(now());
+                    $model->setCreatedTime(now());
+                        //->setUpdateTime(now());
                 } else {
                     $model->setUpdateTime(now());
                 }
