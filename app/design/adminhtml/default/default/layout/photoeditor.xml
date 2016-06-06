@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<layout version="0.1.0">
-    <photoeditor_adminhtml_photoeditor_index>
-        <reference name="content">
-            <block type="photoeditor/adminhtml_photoeditor" name="photoeditor" />
-        </reference>
-    </photoeditor_adminhtml_photoeditor_index>
-</layout>

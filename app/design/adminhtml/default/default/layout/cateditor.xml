@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<layout version="0.1.0">
-    <cateditor_adminhtml_cateditor_index>
-        <reference name="content">
-            <block type="cateditor/adminhtml_cateditor" name="cateditor" />
-        </reference>
-    </cateditor_adminhtml_cateditor_index>
-</layout>
