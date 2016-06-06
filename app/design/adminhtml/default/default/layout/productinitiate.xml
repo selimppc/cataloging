@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<layout version="0.1.0">
+    <productinitiate_adminhtml_productinitiate_index>
+        <reference name="content">
+            <block type="productinitiate/adminhtml_productinitiate" name="productinitiate" />
+        </reference>
+    </productinitiate_adminhtml_productinitiate_index>
+</layout>
